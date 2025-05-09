@@ -43,4 +43,89 @@ Image sources:
 
 ## Papers analyzed
   
-1. 
+#### Phase 1: Encircling Prey
+Whales assume that the current best solution is the prey, and all other whales update their positions to move toward it.
+
+Equations:
+
+Step 1 – Calculate distance to best solution:
+`D = |C * X_best - X|`
+
+Step 2 – Update position:
+
+`X(t + 1) = X_best - A * D`
+
+Parameters:
+- X = current whale position
+- X_best = position of the best whale (best solution found so far)
+- A and C = coefficient vectors that influence movement
+- D = distance between current whale and best whale
+- t = current iteration
+
+How A and C are calculated:
+`A = 2 * a * r - a`
+`C = 2 * r`
+
+Where:
+- a decreases from 2 → 0 over time (controls exploration vs exploitation)
+- r is a random number in [0, 1]
+
+#### Phase 2: Bubble-Net Attacking Method (Exploitation Phase)
+Whales use two behaviors to simulate hunting prey in water:
+
+1. Shrinking Encircling Mechanism
+As a → 0, the whale gets closer to the prey.
+
+Smaller |A| (< 1) pulls whale near X_best.
+
+2. Spiral Updating Position
+`X(t + 1) = D * e^(b * l) * cos(2πl) + X_best`
+
+Where:
+- D = |X_best - X|
+- b = constant defining spiral shape
+- l = random number in [–1, 1]
+- e^(...) * cos(...) = models the spiral movement of whales around prey
+
+
+Combined Model (probabilistic behavior)
+
+The whale chooses either of the two methods with 50% probability:
+
+X(t + 1) = {
+    X_best - A * D                        if p < 0.5
+    D * e^(b * l) * cos(2πl) + X_best     if p ≥ 0.5
+}
+
+Where p is a random number in [0, 1].
+
+#### Phase 3: Search for Prey (Exploration Phase)
+When whales explore instead of exploit, they move relative to a random whale:
+
+`D = |C * X_rand - X|`
+`X(t + 1) = X_rand - A * D`
+
+Here:
+- X_rand = position of a randomly selected whale
+- Used when |A| > 1 to move whales away from the best and encourage exploration
+
+
+
+```python
+Initialize whale population
+Evaluate fitness and get X_best
+
+while (not max iterations):
+    for each whale:
+        Update a, A, C, l, p
+        if p < 0.5:
+            if |A| < 1:
+                use encircling update (toward X_best)
+            else:
+                use exploration update (toward random X)
+        else:
+            use spiral update (around X_best)
+        Correct position if out of bounds
+    Evaluate fitness
+    Update X_best if needed
+```

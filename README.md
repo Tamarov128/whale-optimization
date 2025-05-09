@@ -211,3 +211,21 @@ Now imagine IWOA as whales that:
   
 2. Xiang Wang, Liangsa Wang, Han Li, Yibin Guo, An Improved Whale Optimization Algorithm for Global Optimization and Realized Volatility Prediction, Computers, Materials and Continua, Volume 77, Issue 3, 2023, Pages 2935-2969, ISSN 1546-2218, https://doi.org/10.32604/cmc.2023.044948.
 
+## Results for the selected functions
+### 1. WOA - Seyedali Mirjalili, Andrew Lewis
+WOA algorithm performance compared with PSO, GSA, DE.  
+  
+| F   | WOA ave     | WOA std   | PSO ave    | PSO std   | GSA ave    | GSA std   | DE ave     | DE std    |
+|-----|-------------|-----------|------------|-----------|------------|-----------|------------|-----------|
+| F4 - Schwefel 2.21 | 0.072581    | 0.39747   | 1.086481   | 0.317039  | 7.35487    | 1.741452  | 0          | 0         |
+| F10 - Ackley | 7.4043      | 9.897572  | 0.276015   | 0.50901   | 0.062087   | 0.23628   | 9.7E−08    | 4.2E−08   |
+| F11 - Griewank | 0.000289    | 0.001586  | 0.009215   | 0.007724  | 27.70154   | 5.040343  | 0          | 0         |
+
+### 2. IWOA - Xiang Wang, Liangsa Wang, Han Li, Yibin Guo
+IWOA algorithm performance compared with DE and WOA.
+  
+| Fun. | DE mean  | DE Std.  | WOA mean  | WOA Std.  | IWOA mean | IWOA Std. |
+|------|----------|----------|-------------|-------------|-----------|-----------|
+| F4 - Schwefel 2.21 | 0.0011   | 0.0014   | 34.517    | 27.501    | 1.13e−4   | 1.38e−4   |
+| F7 - Ackley | 1.9390   | 1.1466   | 7.93e−9   | 1.40e−9   | 8.85e−9   | 8.2e−10   |
+| F9 - Griewank | 0.0162   | 0.0200   | 0.0018    | 0.0046    | 0.0027    | 0.0065    |

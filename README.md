@@ -41,19 +41,19 @@ Image sources:
 - Surjanovic, S. & Bingham, D. (2013). Virtual Library of Simulation Experiments: Test Functions and Datasets. http://www.sfu.ca/~ssurjano.
 - Al-Roomi, A. H. (n.d.). Schwefel’s Function No. 2.21. AL-Roomi. https://al-roomi.org/benchmarks/unconstrained/n-dimensions/189-schwefel-s-function-no-2-21
 
-## Papers analyzed
-  
+## Algorithm variants analyzed
+
+### Whale Optimization Algorithm
+
+Algorithm overview:
+    
 #### Phase 1: Encircling Prey
 Whales assume that the current best solution is the prey, and all other whales update their positions to move toward it.
 
 Equations:
-
-Step 1 – Calculate distance to best solution:
-`D = |C * X_best - X|`
-
-Step 2 – Update position:
-
-`X(t + 1) = X_best - A * D`
+- Calculate distance to best solution: `D = |C * X_best - X|`
+  
+- Update position: `X(t + 1) = X_best - A * D`
 
 Parameters:
 - X = current whale position
@@ -62,9 +62,7 @@ Parameters:
 - D = distance between current whale and best whale
 - t = current iteration
 
-How A and C are calculated:
-`A = 2 * a * r - a`
-`C = 2 * r`
+How A and C are calculated: `A = 2 * a * r - a`, `C = 2 * r`
 
 Where:
 - a decreases from 2 → 0 over time (controls exploration vs exploitation)
@@ -74,12 +72,13 @@ Where:
 Whales use two behaviors to simulate hunting prey in water:
 
 1. Shrinking Encircling Mechanism
-As a → 0, the whale gets closer to the prey.
+  As a → 0, the whale gets closer to the prey.  
+  Smaller |A| (< 1) pulls whale near X_best.
 
-Smaller |A| (< 1) pulls whale near X_best.
-
-2. Spiral Updating Position
-`X(t + 1) = D * e^(b * l) * cos(2πl) + X_best`
+2. Spiral Updating Position  
+  ```python
+    X(t + 1) = D * e^(b * l) * cos(2πl) + X_best
+  ```
 
 Where:
 - D = |X_best - X|
@@ -87,29 +86,29 @@ Where:
 - l = random number in [–1, 1]
 - e^(...) * cos(...) = models the spiral movement of whales around prey
 
-
 Combined Model (probabilistic behavior)
 
-The whale chooses either of the two methods with 50% probability:
-
-X(t + 1) = {
+- The whale chooses either of the two methods with 50% probability:  
+```python
+  X(t + 1) = {
     X_best - A * D                        if p < 0.5
     D * e^(b * l) * cos(2πl) + X_best     if p ≥ 0.5
-}
+  }
+```
 
 Where p is a random number in [0, 1].
 
 #### Phase 3: Search for Prey (Exploration Phase)
 When whales explore instead of exploit, they move relative to a random whale:
 
-`D = |C * X_rand - X|`
-`X(t + 1) = X_rand - A * D`
+```python
+  D = |C * X_rand - X|
+  X(t + 1) = X_rand - A * D
+```
 
 Here:
 - X_rand = position of a randomly selected whale
 - Used when |A| > 1 to move whales away from the best and encourage exploration
-
-
 
 ```python
 Initialize whale population
@@ -129,3 +128,7 @@ while (not max iterations):
     Evaluate fitness
     Update X_best if needed
 ```
+
+### Improved Whale Optimization Algorithm
+
+Algorithm overview:

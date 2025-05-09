@@ -12,7 +12,7 @@ Function minimization-
 ![Schwefel 2.21](https://al-roomi.org/multimedia/Unconstrained_Benchmarks/ndimensional/SchwefelFunction221/3D_SchwefelFunction221.jpg)
 
 Image sources: 
-- https://www.sfu.ca/~ssurjano/index.html
-- https://al-roomi.org/benchmarks/unconstrained/n-dimensions/189-schwefel-s-function-no-2-21
+- Surjanovic, S. & Bingham, D. (2013). Virtual Library of Simulation Experiments: Test Functions and Datasets. http://www.sfu.ca/~ssurjano.
+- Al-Roomi, A. H. (n.d.). Schwefel’s Function No. 2.21. AL-Roomi. https://al-roomi.org/benchmarks/unconstrained/n-dimensions/189-schwefel-s-function-no-2-21
 
 ## Papers analyzed

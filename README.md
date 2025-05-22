@@ -14,6 +14,15 @@ The optimization problem we choose to solve using the Whale Search Optimization 
       src="https://al-roomi.org/multimedia/Unconstrained_Benchmarks/ndimensional/SchwefelFunction221/3D_SchwefelFunction221.jpg" 
       alt="Schwefel">
   </img>
+    
+  <img 
+      style="display: block; 
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;"
+      src="static\Schwefel_2.21.svg" 
+      alt="Schwefel">
+  </img>
   
 - Ackley's function (F10 & F7)  
     
@@ -25,6 +34,15 @@ The optimization problem we choose to solve using the Whale Search Optimization 
       src="https://www.sfu.ca/~ssurjano/ackley.png" 
       alt="Ackley">
   </img>
+    
+  <img 
+      style="display: block; 
+            margin-left: auto;
+            margin-right: auto;
+            width:70%;"
+      src="static\Ackley.svg" 
+      alt="Schwefel">
+  </img>
 
 - Griewank's Function (F11 & F9)  
     
@@ -33,13 +51,22 @@ The optimization problem we choose to solve using the Whale Search Optimization 
             margin-left: auto;
             margin-right: auto;
             width: 70%;"
-      src="https://www.sfu.ca/~ssurjano/griewank.png" 
+      src="https://al-roomi.org/multimedia/Unconstrained_Benchmarks/ndimensional/GeneralizedGriewankFunction/3D_GeneralizedGriewankFunction.jpg" 
       alt="Griewank">
+  </img>
+    
+  <img 
+      style="display: block; 
+            margin-left: auto;
+            margin-right: auto;
+            width:50%;"
+      src="static\Griewank.svg" 
+      alt="Schwefel">
   </img>
 
 Image sources: 
 - Surjanovic, S. & Bingham, D. (2013). Virtual Library of Simulation Experiments: Test Functions and Datasets. http://www.sfu.ca/~ssurjano.
-- Al-Roomi, A. H. (n.d.). Schwefel’s Function No. 2.21. AL-Roomi. https://al-roomi.org/benchmarks/unconstrained/n-dimensions/189-schwefel-s-function-no-2-21
+- Ali R. Al-Roomi (2015). Unconstrained Single-Objective Benchmark Functions Repository [https://www.al-roomi.org/benchmarks/unconstrained]. Halifax, Nova Scotia, Canada: Dalhousie University, Electrical and Computer Engineering.
 
 ## Whale Optimization Algorithm
 

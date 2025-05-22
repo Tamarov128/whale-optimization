@@ -59,6 +59,15 @@ The optimization problem we choose to solve using the Whale Search Optimization 
       style="display: block; 
             margin-left: auto;
             margin-right: auto;
+            width: 70%;"
+      src="https://www.sfu.ca/~ssurjano/griewank.png" 
+      alt="Griewank">
+  </img>
+    
+  <img 
+      style="display: block; 
+            margin-left: auto;
+            margin-right: auto;
             width:50%;"
       src="static\Griewank.svg" 
       alt="Schwefel">
